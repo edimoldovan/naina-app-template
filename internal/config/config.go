@@ -36,9 +36,9 @@ func Load() Config {
 			os.Getenv("NEXAMPLE_MYSQL_HOST"),
 			os.Getenv("NEXAMPLE_MYSQL_DB"),
 		),
-		BaseAddress:    os.Getenv("BASE_ADDRESS"),
-		SessionAuthKey: os.Getenv("SESSION_AUTH_KEY"),
-		SessionEncKey:  os.Getenv("SESSION_ENCRYPT_KEY"),
+		BaseAddress:    os.Getenv("NEXAMPLE_BASE_ADDRESS"),
+		SessionAuthKey: os.Getenv("NEXAMPLE_SESSION_AUTH_KEY"),
+		SessionEncKey:  os.Getenv("NEXAMPLE_SESSION_ENCRYPT_KEY"),
 		CookieName:     "nexample",
 	}
 }
