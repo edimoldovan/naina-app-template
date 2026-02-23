@@ -1,8 +1,8 @@
 package database
 
 import (
-	"example/internal/config"
 	"log"
+	"nexample/internal/config"
 	"time"
 
 	"gorm.io/driver/mysql"

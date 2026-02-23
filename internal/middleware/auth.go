@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"example/internal/session"
 	"net/http"
+	"nexample/internal/session"
 )
 
 func Auth(next http.HandlerFunc) http.HandlerFunc {

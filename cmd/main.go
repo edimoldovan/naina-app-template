@@ -1,14 +1,14 @@
 package main
 
 import (
-	"example/internal/config"
-	"example/internal/database"
-	"example/internal/handler"
-	"example/internal/router"
-	"example/internal/session"
-	"example/internal/static"
 	"log"
 	"net/http"
+	"nexample/internal/config"
+	"nexample/internal/database"
+	"nexample/internal/handler"
+	"nexample/internal/router"
+	"nexample/internal/session"
+	"nexample/internal/static"
 
 	"github.com/go-chi/chi/v5"
 )

@@ -2,10 +2,10 @@ package handler
 
 import (
 	"embed"
-	"example/internal/config"
 	"html/template"
 	"log"
 	"net/http"
+	"nexample/internal/config"
 	"path/filepath"
 	"strings"
 )

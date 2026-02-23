@@ -1,9 +1,9 @@
 package router
 
 import (
-	"example/internal/handler"
-	"example/internal/middleware"
 	"net/http"
+	"nexample/internal/handler"
+	"nexample/internal/middleware"
 	"strings"
 
 	"github.com/go-chi/chi/v5"

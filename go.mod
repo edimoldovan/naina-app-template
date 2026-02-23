@@ -1,4 +1,4 @@
-module example
+module nexample
 
 go 1.26
 

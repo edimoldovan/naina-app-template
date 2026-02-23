@@ -2,8 +2,8 @@ package static
 
 import (
 	"embed"
-	"example/internal/config"
 	"net/http"
+	"nexample/internal/config"
 
 	"github.com/go-chi/chi/v5"
 )

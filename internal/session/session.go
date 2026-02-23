@@ -2,9 +2,9 @@ package session
 
 import (
 	"encoding/gob"
-	"example/internal/config"
-	"example/internal/database"
 	"net/http"
+	"nexample/internal/config"
+	"nexample/internal/database"
 
 	"github.com/gorilla/sessions"
 )

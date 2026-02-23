@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"example/internal/database"
+	"nexample/internal/database"
 
 	"gorm.io/gorm"
 )
