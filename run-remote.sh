@@ -12,4 +12,4 @@ nohup ./main > app.log 2>&1 &
 echo $! > app.pid
 
 # Remove source code only after successful build and start
-# rm -rf cmd/ config/ internal/ .kamal/ deploy.sh Dockerfile go.mod go.sum .gitignore
+rm -rf cmd/ config/ internal/ .kamal/ deploy.sh Dockerfile go.mod go.sum .gitignore
