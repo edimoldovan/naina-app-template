@@ -1,0 +1,4 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body { font-family: system-ui, sans-serif; max-width: 64rem; margin: 0 auto; padding: 2rem; }
+nav { display: flex; gap: 1rem; margin-bottom: 2rem; }
+nav a { text-decoration: none; color: inherit; }

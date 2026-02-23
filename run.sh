@@ -1,0 +1,1 @@
+reflex -r '\.(go|html|js|css|gotmpl|json)$' -s -- go run cmd/main.go -asan

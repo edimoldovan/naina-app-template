@@ -1,0 +1,20 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{.Title}}</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+	<nav>
+		<a href="/">nexample</a>
+		<a href="/dashboard">Dashboard</a>
+	</nav>
+	<main>
+		{{template "content" .}}
+	</main>
+</body>
+</html>
+{{end}}

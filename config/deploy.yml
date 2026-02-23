@@ -1,0 +1,43 @@
+service: nexample
+
+image: edimoldovan/nexample
+
+servers:
+  web:
+    - 37.27.197.69
+
+proxy:
+  ssl: true
+  host: nexample.naina.codes
+
+registry:
+  server: localhost:5555
+
+builder:
+  arch: arm64
+
+env:
+  clear:
+    PORT: "80"
+    nexample_MYSQL_HOST: 89.167.21.227
+    nexample_MYSQL_DB: "nexample"
+  secret:
+    - nexample_MYSQL_USER
+    - nexample_MYSQL_PASSWORD
+    - nexample_SESSION_AUTH_KEY
+    - nexample_SESSION_ENCRYPT_KEY
+
+accessories:
+  db:
+    image: mariadb:12
+    host: 89.167.21.227
+    port: 3306
+    env:
+      clear:
+        MARIADB_DATABASE: nexample
+      secret:
+        - MARIADB_ROOT_PASSWORD
+        - MARIADB_USER
+        - MARIADB_PASSWORD
+    volumes:
+      - nexample_db:/var/lib/mysql
