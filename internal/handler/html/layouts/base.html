@@ -1,20 +1,49 @@
 {{define "base"}}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{.Title}}</title>
-	<link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/colors.css">
+  <link rel="stylesheet" href="/assets/css/type.css">
+  <link rel="stylesheet" href="/assets/css/space.css">
+  <link rel="stylesheet" href="/assets/css/grids.css">
+  <link rel="stylesheet" href="/assets/css/elements.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
 </head>
+
 <body>
-	<nav>
-		<a href="/">nexample</a>
-		<a href="/dashboard">Dashboard</a>
-	</nav>
-	<main>
-		{{template "content" .}}
-	</main>
+
+
+  <main class="grid">
+    <div class="n-navigation-small grid full">
+      <section>
+        <a class="logo" href="/">
+          <img src="/svg/50/50" alt="Logo">
+        </a>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">{{.Name}}</a>
+            </li>
+            <li>
+              <a href="/dashboard">Dashboard</a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <a href="#" class="primary">Sign in</a>
+          <!--<a href="#" class="secondary">Oi</a>
+          <a href="#" class="delete">Sign out</a>-->
+        </nav>
+      </section>
+    </div>
+    {{template "content" .}}
+  </main>
 </body>
+
 </html>
 {{end}}
