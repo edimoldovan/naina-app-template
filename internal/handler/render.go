@@ -2,6 +2,7 @@ package handler
 
 import (
 	"embed"
+	"io/fs"
 	"html/template"
 	"log"
 	"net/http"
@@ -16,7 +17,11 @@ var embeddedHTML embed.FS
 var pages = map[string]*template.Template{}
 
 func InitTemplates() {
-	layout := "html/layouts/base.html"
+	partials, err := fs.Glob(embeddedHTML, "html/partials/*.html")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	entries, err := embeddedHTML.ReadDir("html/pages")
 	if err != nil {
 		log.Fatal(err)
@@ -24,7 +29,9 @@ func InitTemplates() {
 
 	for _, e := range entries {
 		name := strings.TrimSuffix(e.Name(), ".html")
-		t, err := template.ParseFS(embeddedHTML, layout, "html/pages/"+e.Name())
+		files := append([]string{}, partials...)
+		files = append(files, "html/pages/"+e.Name())
+		t, err := template.ParseFS(embeddedHTML, files...)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -38,16 +45,22 @@ func render(w http.ResponseWriter, name string, data map[string]any) {
 	}
 	data["IsDev"] = config.IsDev()
 
+	pageFile := name + ".html"
+
 	if config.IsDev() {
-		t, err := template.ParseFiles(
-			filepath.Join("internal", "handler", "html", "layouts", "base.html"),
-			filepath.Join("internal", "handler", "html", "pages", name+".html"),
-		)
+		partials, err := filepath.Glob(filepath.Join("internal", "handler", "html", "partials", "*.html"))
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		if err := t.ExecuteTemplate(w, name, data); err != nil {
+		files := append([]string{}, partials...)
+		files = append(files, filepath.Join("internal", "handler", "html", "pages", pageFile))
+		t, err := template.ParseFiles(files...)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		if err := t.ExecuteTemplate(w, pageFile, data); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
 		return
@@ -59,7 +72,7 @@ func render(w http.ResponseWriter, name string, data map[string]any) {
 		return
 	}
 
-	if err := t.ExecuteTemplate(w, name, data); err != nil {
+	if err := t.ExecuteTemplate(w, pageFile, data); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
