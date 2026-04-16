@@ -1,7 +1,4 @@
 .grid {
-  --content-max-width: 80.0rem;
-  --content-wide-2-width: 4.0rem;
-  --content-wide-1-width: 2.0rem;
   --grid-gap: clamp(1rem, 6vw, 3rem);
   --standard: min(var(--content-max-width), 100% - var(--grid-gap) * 2);
   --wide-1: minmax(0, var(--content-wide-1-width));

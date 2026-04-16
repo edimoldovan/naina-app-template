@@ -1,56 +1,102 @@
 :root {
-  --space: 1rem;
-  --space-3xs: clamp(0.25rem, calc(0.2011rem + 0.2446vw), 0.3906rem);
-  --space-2xs: clamp(0.5rem, calc(0.4022rem + 0.4891vw), 0.7812rem);
-  --space-xs: clamp(0.75rem, calc(0.6033rem + 0.7337vw), 1.172rem);
-  --space-s: clamp(1rem, calc(0.8043rem + 0.9783vw), 1.562rem);
-  --space-m: clamp(1.5rem, calc(1.207rem + 1.467vw), 2.344rem);
-  --space-l: clamp(2rem, calc(1.609rem + 1.957vw), 3.125rem);
-  --space-xl: clamp(3rem, calc(2.413rem + 2.935vw), 4.688rem);
-  --space-2xl: clamp(4rem, calc(3.217rem + 3.913vw), 6.25rem);
-  --space-3xl: clamp(5rem, calc(4.022rem + 4.891vw), 7.812rem);
-  --space-3xs-2xs: clamp(0.25rem, calc(0.06522rem + 0.9239vw), 0.7812rem);
-  --space-2xs-xs: clamp(0.5rem, calc(0.2663rem + 1.168vw), 1.172rem);
-  --space-xs-s: clamp(0.75rem, calc(0.4674rem + 1.413vw), 1.562rem);
-  --space-s-m: clamp(1rem, calc(0.5326rem + 2.337vw), 2.344rem);
-  --space-m-l: clamp(1.5rem, calc(0.9348rem + 2.826vw), 3.125rem);
-  --space-l-xl: clamp(2rem, calc(1.065rem + 4.674vw), 4.688rem);
-  --space-xl-2xl: clamp(3rem, calc(1.87rem + 5.652vw), 6.25rem);
-  --space-2xl-3xl: clamp(4rem, calc(2.674rem + 6.63vw), 7.812rem);
-  --space-3xs-2xs: clamp(0.25rem, calc(0.06522rem + 0.9239vw), 0.7812rem);
-  --space-3xs-xs: clamp(0.25rem, calc(-0.07065rem + 1.603vw), 1.172rem);
-  --space-3xs-s: clamp(0.25rem, calc(-0.2065rem + 2.283vw), 1.562rem);
-  --space-3xs-m: clamp(0.25rem, calc(-0.4783rem + 3.641vw), 2.344rem);
-  --space-3xs-l: clamp(0.25rem, calc(-0.75rem + 5vw), 3.125rem);
-  --space-3xs-xl: clamp(0.25rem, calc(-1.293rem + 7.717vw), 4.688rem);
-  --space-3xs-2xl: clamp(0.25rem, calc(-1.837rem + 10.43vw), 6.25rem);
-  --space-3xs-3xl: clamp(0.25rem, calc(-2.38rem + 13.15vw), 7.812rem);
-  --space-2xs-xs: clamp(0.5rem, calc(0.2663rem + 1.168vw), 1.172rem);
-  --space-2xs-s: clamp(0.5rem, calc(0.1304rem + 1.848vw), 1.562rem);
-  --space-2xs-m: clamp(0.5rem, calc(-0.1413rem + 3.207vw), 2.344rem);
-  --space-2xs-l: clamp(0.5rem, calc(-0.413rem + 4.565vw), 3.125rem);
-  --space-2xs-xl: clamp(0.5rem, calc(-0.9565rem + 7.283vw), 4.688rem);
-  --space-2xs-2xl: clamp(0.5rem, calc(-1.5rem + 10vw), 6.25rem);
-  --space-2xs-3xl: clamp(0.5rem, calc(-2.043rem + 12.72vw), 7.812rem);
-  --space-xs-s: clamp(0.75rem, calc(0.4674rem + 1.413vw), 1.562rem);
-  --space-xs-m: clamp(0.75rem, calc(0.1957rem + 2.772vw), 2.344rem);
-  --space-xs-l: clamp(0.75rem, calc(-0.07609rem + 4.13vw), 3.125rem);
-  --space-xs-xl: clamp(0.75rem, calc(-0.6196rem + 6.848vw), 4.688rem);
-  --space-xs-2xl: clamp(0.75rem, calc(-1.163rem + 9.565vw), 6.25rem);
-  --space-xs-3xl: clamp(0.75rem, calc(-1.707rem + 12.28vw), 7.812rem);
-  --space-s-m: clamp(1rem, calc(0.5326rem + 2.337vw), 2.344rem);
-  --space-s-l: clamp(1rem, calc(0.2609rem + 3.696vw), 3.125rem);
-  --space-s-xl: clamp(1rem, calc(-0.2826rem + 6.413vw), 4.688rem);
-  --space-s-2xl: clamp(1rem, calc(-0.8261rem + 9.13vw), 6.25rem);
-  --space-s-3xl: clamp(1rem, calc(-1.37rem + 11.85vw), 7.812rem);
-  --space-m-l: clamp(1.5rem, calc(0.9348rem + 2.826vw), 3.125rem);
-  --space-m-xl: clamp(1.5rem, calc(0.3913rem + 5.543vw), 4.688rem);
-  --space-m-2xl: clamp(1.5rem, calc(-0.1522rem + 8.261vw), 6.25rem);
-  --space-m-3xl: clamp(1.5rem, calc(-0.6957rem + 10.98vw), 7.812rem);
-  --space-l-xl: clamp(2rem, calc(1.065rem + 4.674vw), 4.688rem);
-  --space-l-2xl: clamp(2rem, calc(0.5217rem + 7.391vw), 6.25rem);
-  --space-l-3xl: clamp(2rem, calc(-0.02174rem + 10.11vw), 7.812rem);
-  --space-xl-2xl: clamp(3rem, calc(1.87rem + 5.652vw), 6.25rem);
-  --space-xl-3xl: clamp(3rem, calc(1.326rem + 8.37vw), 7.812rem);
-  --space-2xl-3xl: clamp(4rem, calc(2.674rem + 6.63vw), 7.812rem);
+  /* inputs come from variables.css; see GenerateSpaceScales in naina for the formula.
+     ---------- derived (all unitless) ---------- */
+  --space-min-width-rem: calc(var(--min-viewport) / 16);
+  --space-max-width-rem: calc(var(--space-max-viewport) / 16);
+  --space-vw-span: calc(var(--space-max-width-rem) - var(--space-min-width-rem));
+
+  /* same MaxFontSize/MinFontSize boost applied to every max-viewport size */
+  --space-max-boost: calc(var(--space-max-font-size) / var(--min-font-size));
+  --space-min-base: calc(var(--min-font-size) / 16);
+  --space-max-base: calc(var(--space-max-font-size) / 16 * var(--space-max-boost));
+
+  /* per-size bounds (unitless rem) */
+  --sp-3xs-min: calc(var(--space-min-base) * var(--m-3xs));
+  --sp-3xs-max: calc(var(--space-max-base) * var(--m-3xs));
+  --sp-2xs-min: calc(var(--space-min-base) * var(--m-2xs));
+  --sp-2xs-max: calc(var(--space-max-base) * var(--m-2xs));
+  --sp-xs-min:  calc(var(--space-min-base) * var(--m-xs));
+  --sp-xs-max:  calc(var(--space-max-base) * var(--m-xs));
+  --sp-s-min:   calc(var(--space-min-base) * var(--m-s));
+  --sp-s-max:   calc(var(--space-max-base) * var(--m-s));
+  --sp-m-min:   calc(var(--space-min-base) * var(--m-m));
+  --sp-m-max:   calc(var(--space-max-base) * var(--m-m));
+  --sp-l-min:   calc(var(--space-min-base) * var(--m-l));
+  --sp-l-max:   calc(var(--space-max-base) * var(--m-l));
+  --sp-xl-min:  calc(var(--space-min-base) * var(--m-xl));
+  --sp-xl-max:  calc(var(--space-max-base) * var(--m-xl));
+  --sp-2xl-min: calc(var(--space-min-base) * var(--m-2xl));
+  --sp-2xl-max: calc(var(--space-max-base) * var(--m-2xl));
+  --sp-3xl-min: calc(var(--space-min-base) * var(--m-3xl));
+  --sp-3xl-max: calc(var(--space-max-base) * var(--m-3xl));
+
+  /* ---------- fluid clamps ----------
+     For a pair going from size A at min-viewport to size B at max-viewport:
+       slope = (B-max - A-min) / vw-span
+       yint  = A-min - min-width-rem * slope
+       value = clamp(A-min rem, yint rem + slope * 100vw, B-max rem)
+     Singles are just the degenerate case A == B.  */
+
+  /* singles */
+  --space-3xs: clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-3xs-max) - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xs-max) - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xs-max) * 1rem));
+  --space-2xs: clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-2xs-max) - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xs-max) - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xs-max) * 1rem));
+  --space-xs:  clamp(calc(var(--sp-xs-min)  * 1rem), calc((var(--sp-xs-min)  - var(--space-min-width-rem) * (var(--sp-xs-max)  - var(--sp-xs-min))  / var(--space-vw-span)) * 1rem + (var(--sp-xs-max)  - var(--sp-xs-min))  / var(--space-vw-span) * 100vw), calc(var(--sp-xs-max)  * 1rem));
+  --space-s:   clamp(calc(var(--sp-s-min)   * 1rem), calc((var(--sp-s-min)   - var(--space-min-width-rem) * (var(--sp-s-max)   - var(--sp-s-min))   / var(--space-vw-span)) * 1rem + (var(--sp-s-max)   - var(--sp-s-min))   / var(--space-vw-span) * 100vw), calc(var(--sp-s-max)   * 1rem));
+  --space-m:   clamp(calc(var(--sp-m-min)   * 1rem), calc((var(--sp-m-min)   - var(--space-min-width-rem) * (var(--sp-m-max)   - var(--sp-m-min))   / var(--space-vw-span)) * 1rem + (var(--sp-m-max)   - var(--sp-m-min))   / var(--space-vw-span) * 100vw), calc(var(--sp-m-max)   * 1rem));
+  --space-l:   clamp(calc(var(--sp-l-min)   * 1rem), calc((var(--sp-l-min)   - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-l-min))   / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-l-min))   / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-xl:  clamp(calc(var(--sp-xl-min)  * 1rem), calc((var(--sp-xl-min)  - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-xl-min))  / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-xl-min))  / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-2xl: clamp(calc(var(--sp-2xl-min) * 1rem), calc((var(--sp-2xl-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-2xl-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-2xl-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-3xl: clamp(calc(var(--sp-3xl-min) * 1rem), calc((var(--sp-3xl-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-3xl-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-3xl-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from 3xs */
+  --space-3xs-2xs: clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-2xs-max) - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xs-max) - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xs-max) * 1rem));
+  --space-3xs-xs:  clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-xs-max)  - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xs-max)  - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xs-max)  * 1rem));
+  --space-3xs-s:   clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-s-max)   - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-s-max)   - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-s-max)   * 1rem));
+  --space-3xs-m:   clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-m-max)   - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-m-max)   - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-m-max)   * 1rem));
+  --space-3xs-l:   clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-3xs-xl:  clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-3xs-2xl: clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-3xs-3xl: clamp(calc(var(--sp-3xs-min) * 1rem), calc((var(--sp-3xs-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-3xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-3xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from 2xs */
+  --space-2xs-xs:  clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-xs-max)  - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xs-max)  - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xs-max)  * 1rem));
+  --space-2xs-s:   clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-s-max)   - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-s-max)   - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-s-max)   * 1rem));
+  --space-2xs-m:   clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-m-max)   - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-m-max)   - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-m-max)   * 1rem));
+  --space-2xs-l:   clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-2xs-xl:  clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-2xs-2xl: clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-2xs-3xl: clamp(calc(var(--sp-2xs-min) * 1rem), calc((var(--sp-2xs-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-2xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-2xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from xs */
+  --space-xs-s:   clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-s-max)   - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-s-max)   - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-s-max)   * 1rem));
+  --space-xs-m:   clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-m-max)   - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-m-max)   - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-m-max)   * 1rem));
+  --space-xs-l:   clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-xs-xl:  clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-xs-2xl: clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-xs-3xl: clamp(calc(var(--sp-xs-min) * 1rem), calc((var(--sp-xs-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-xs-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-xs-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from s */
+  --space-s-m:   clamp(calc(var(--sp-s-min) * 1rem), calc((var(--sp-s-min) - var(--space-min-width-rem) * (var(--sp-m-max)   - var(--sp-s-min)) / var(--space-vw-span)) * 1rem + (var(--sp-m-max)   - var(--sp-s-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-m-max)   * 1rem));
+  --space-s-l:   clamp(calc(var(--sp-s-min) * 1rem), calc((var(--sp-s-min) - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-s-min)) / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-s-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-s-xl:  clamp(calc(var(--sp-s-min) * 1rem), calc((var(--sp-s-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-s-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-s-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-s-2xl: clamp(calc(var(--sp-s-min) * 1rem), calc((var(--sp-s-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-s-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-s-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-s-3xl: clamp(calc(var(--sp-s-min) * 1rem), calc((var(--sp-s-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-s-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-s-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from m */
+  --space-m-l:   clamp(calc(var(--sp-m-min) * 1rem), calc((var(--sp-m-min) - var(--space-min-width-rem) * (var(--sp-l-max)   - var(--sp-m-min)) / var(--space-vw-span)) * 1rem + (var(--sp-l-max)   - var(--sp-m-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-l-max)   * 1rem));
+  --space-m-xl:  clamp(calc(var(--sp-m-min) * 1rem), calc((var(--sp-m-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-m-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-m-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-m-2xl: clamp(calc(var(--sp-m-min) * 1rem), calc((var(--sp-m-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-m-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-m-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-m-3xl: clamp(calc(var(--sp-m-min) * 1rem), calc((var(--sp-m-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-m-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-m-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from l */
+  --space-l-xl:  clamp(calc(var(--sp-l-min) * 1rem), calc((var(--sp-l-min) - var(--space-min-width-rem) * (var(--sp-xl-max)  - var(--sp-l-min)) / var(--space-vw-span)) * 1rem + (var(--sp-xl-max)  - var(--sp-l-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-xl-max)  * 1rem));
+  --space-l-2xl: clamp(calc(var(--sp-l-min) * 1rem), calc((var(--sp-l-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-l-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-l-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-l-3xl: clamp(calc(var(--sp-l-min) * 1rem), calc((var(--sp-l-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-l-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-l-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from xl */
+  --space-xl-2xl: clamp(calc(var(--sp-xl-min) * 1rem), calc((var(--sp-xl-min) - var(--space-min-width-rem) * (var(--sp-2xl-max) - var(--sp-xl-min)) / var(--space-vw-span)) * 1rem + (var(--sp-2xl-max) - var(--sp-xl-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-2xl-max) * 1rem));
+  --space-xl-3xl: clamp(calc(var(--sp-xl-min) * 1rem), calc((var(--sp-xl-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-xl-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-xl-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
+
+  /* pairs from 2xl */
+  --space-2xl-3xl: clamp(calc(var(--sp-2xl-min) * 1rem), calc((var(--sp-2xl-min) - var(--space-min-width-rem) * (var(--sp-3xl-max) - var(--sp-2xl-min)) / var(--space-vw-span)) * 1rem + (var(--sp-3xl-max) - var(--sp-2xl-min)) / var(--space-vw-span) * 100vw), calc(var(--sp-3xl-max) * 1rem));
 }

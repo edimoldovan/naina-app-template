@@ -1,0 +1,88 @@
+:root {
+  /* inputs come from variables.css; see GenerateTypeScales in naina for the formula.
+     ---------- derived (unitless, in rem units conceptually) ---------- */
+  --type-min-width-rem: calc(var(--min-viewport) / 16);
+  --type-max-width-rem: calc(var(--type-max-viewport) / 16);
+  --type-vw-span: calc(var(--type-max-width-rem) - var(--type-min-width-rem));
+
+  /* naina boosts every max-viewport size by MaxFontSize/MinFontSize — this is what makes
+     large steps grow faster at wide viewports than simple ratio^N scaling would give. */
+  --type-max-boost: calc(var(--type-max-font-size) / var(--min-font-size));
+  --type-base-min: calc(var(--min-font-size) / 16);
+  --type-base-max: calc(var(--type-max-font-size) / 16 * var(--type-max-boost));
+
+  /* ---------- per-step bounds (unitless rem) ----------
+     step N:  min = base-min * type-min-scale^N,  max = base-max * type-max-scale^N  */
+  --fs--2-min: calc(var(--type-base-min) * pow(var(--type-min-scale), -2));
+  --fs--2-max: calc(var(--type-base-max) * pow(var(--type-max-scale), -2));
+  --fs--1-min: calc(var(--type-base-min) * pow(var(--type-min-scale), -1));
+  --fs--1-max: calc(var(--type-base-max) * pow(var(--type-max-scale), -1));
+  --fs-0-min:  var(--type-base-min);
+  --fs-0-max:  var(--type-base-max);
+  --fs-1-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  1));
+  --fs-1-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  1));
+  --fs-2-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  2));
+  --fs-2-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  2));
+  --fs-3-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  3));
+  --fs-3-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  3));
+  --fs-4-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  4));
+  --fs-4-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  4));
+  --fs-5-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  5));
+  --fs-5-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  5));
+  --fs-6-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  6));
+  --fs-6-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  6));
+  --fs-7-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  7));
+  --fs-7-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  7));
+  --fs-8-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  8));
+  --fs-8-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  8));
+  --fs-9-min:  calc(var(--type-base-min) * pow(var(--type-min-scale),  9));
+  --fs-9-max:  calc(var(--type-base-max) * pow(var(--type-max-scale),  9));
+  --fs-10-min: calc(var(--type-base-min) * pow(var(--type-min-scale), 10));
+  --fs-10-max: calc(var(--type-base-max) * pow(var(--type-max-scale), 10));
+
+  /* ---------- fluid clamp ----------
+     slope     = (max - min) / vw-span             (unitless)
+     yint      = min - min-width-rem * slope       (unitless, rem)
+     value     = clamp(min rem, yint rem + slope * 100vw, max rem)  */
+  --fs--2-slope: calc((var(--fs--2-max) - var(--fs--2-min)) / var(--type-vw-span));
+  --fs--1-slope: calc((var(--fs--1-max) - var(--fs--1-min)) / var(--type-vw-span));
+  --fs-0-slope:  calc((var(--fs-0-max)  - var(--fs-0-min))  / var(--type-vw-span));
+  --fs-1-slope:  calc((var(--fs-1-max)  - var(--fs-1-min))  / var(--type-vw-span));
+  --fs-2-slope:  calc((var(--fs-2-max)  - var(--fs-2-min))  / var(--type-vw-span));
+  --fs-3-slope:  calc((var(--fs-3-max)  - var(--fs-3-min))  / var(--type-vw-span));
+  --fs-4-slope:  calc((var(--fs-4-max)  - var(--fs-4-min))  / var(--type-vw-span));
+  --fs-5-slope:  calc((var(--fs-5-max)  - var(--fs-5-min))  / var(--type-vw-span));
+  --fs-6-slope:  calc((var(--fs-6-max)  - var(--fs-6-min))  / var(--type-vw-span));
+  --fs-7-slope:  calc((var(--fs-7-max)  - var(--fs-7-min))  / var(--type-vw-span));
+  --fs-8-slope:  calc((var(--fs-8-max)  - var(--fs-8-min))  / var(--type-vw-span));
+  --fs-9-slope:  calc((var(--fs-9-max)  - var(--fs-9-min))  / var(--type-vw-span));
+  --fs-10-slope: calc((var(--fs-10-max) - var(--fs-10-min)) / var(--type-vw-span));
+
+  --fs--2-yint: calc(var(--fs--2-min) - var(--type-min-width-rem) * var(--fs--2-slope));
+  --fs--1-yint: calc(var(--fs--1-min) - var(--type-min-width-rem) * var(--fs--1-slope));
+  --fs-0-yint:  calc(var(--fs-0-min)  - var(--type-min-width-rem) * var(--fs-0-slope));
+  --fs-1-yint:  calc(var(--fs-1-min)  - var(--type-min-width-rem) * var(--fs-1-slope));
+  --fs-2-yint:  calc(var(--fs-2-min)  - var(--type-min-width-rem) * var(--fs-2-slope));
+  --fs-3-yint:  calc(var(--fs-3-min)  - var(--type-min-width-rem) * var(--fs-3-slope));
+  --fs-4-yint:  calc(var(--fs-4-min)  - var(--type-min-width-rem) * var(--fs-4-slope));
+  --fs-5-yint:  calc(var(--fs-5-min)  - var(--type-min-width-rem) * var(--fs-5-slope));
+  --fs-6-yint:  calc(var(--fs-6-min)  - var(--type-min-width-rem) * var(--fs-6-slope));
+  --fs-7-yint:  calc(var(--fs-7-min)  - var(--type-min-width-rem) * var(--fs-7-slope));
+  --fs-8-yint:  calc(var(--fs-8-min)  - var(--type-min-width-rem) * var(--fs-8-slope));
+  --fs-9-yint:  calc(var(--fs-9-min)  - var(--type-min-width-rem) * var(--fs-9-slope));
+  --fs-10-yint: calc(var(--fs-10-min) - var(--type-min-width-rem) * var(--fs-10-slope));
+
+  --font-size--2: clamp(calc(var(--fs--2-min) * 1rem), calc(var(--fs--2-yint) * 1rem + var(--fs--2-slope) * 100vw), calc(var(--fs--2-max) * 1rem));
+  --font-size--1: clamp(calc(var(--fs--1-min) * 1rem), calc(var(--fs--1-yint) * 1rem + var(--fs--1-slope) * 100vw), calc(var(--fs--1-max) * 1rem));
+  --font-size-0:  clamp(calc(var(--fs-0-min)  * 1rem), calc(var(--fs-0-yint)  * 1rem + var(--fs-0-slope)  * 100vw), calc(var(--fs-0-max)  * 1rem));
+  --font-size-1:  clamp(calc(var(--fs-1-min)  * 1rem), calc(var(--fs-1-yint)  * 1rem + var(--fs-1-slope)  * 100vw), calc(var(--fs-1-max)  * 1rem));
+  --font-size-2:  clamp(calc(var(--fs-2-min)  * 1rem), calc(var(--fs-2-yint)  * 1rem + var(--fs-2-slope)  * 100vw), calc(var(--fs-2-max)  * 1rem));
+  --font-size-3:  clamp(calc(var(--fs-3-min)  * 1rem), calc(var(--fs-3-yint)  * 1rem + var(--fs-3-slope)  * 100vw), calc(var(--fs-3-max)  * 1rem));
+  --font-size-4:  clamp(calc(var(--fs-4-min)  * 1rem), calc(var(--fs-4-yint)  * 1rem + var(--fs-4-slope)  * 100vw), calc(var(--fs-4-max)  * 1rem));
+  --font-size-5:  clamp(calc(var(--fs-5-min)  * 1rem), calc(var(--fs-5-yint)  * 1rem + var(--fs-5-slope)  * 100vw), calc(var(--fs-5-max)  * 1rem));
+  --font-size-6:  clamp(calc(var(--fs-6-min)  * 1rem), calc(var(--fs-6-yint)  * 1rem + var(--fs-6-slope)  * 100vw), calc(var(--fs-6-max)  * 1rem));
+  --font-size-7:  clamp(calc(var(--fs-7-min)  * 1rem), calc(var(--fs-7-yint)  * 1rem + var(--fs-7-slope)  * 100vw), calc(var(--fs-7-max)  * 1rem));
+  --font-size-8:  clamp(calc(var(--fs-8-min)  * 1rem), calc(var(--fs-8-yint)  * 1rem + var(--fs-8-slope)  * 100vw), calc(var(--fs-8-max)  * 1rem));
+  --font-size-9:  clamp(calc(var(--fs-9-min)  * 1rem), calc(var(--fs-9-yint)  * 1rem + var(--fs-9-slope)  * 100vw), calc(var(--fs-9-max)  * 1rem));
+  --font-size-10: clamp(calc(var(--fs-10-min) * 1rem), calc(var(--fs-10-yint) * 1rem + var(--fs-10-slope) * 100vw), calc(var(--fs-10-max) * 1rem));
+}

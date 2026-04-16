@@ -1,0 +1,73 @@
+:root {
+  /* ---------- modular scale ratios (pick one for --min-scale / --max-scale below) ---------- */
+  --scale-minor-second:     1.067;
+  --scale-major-second:     1.125;
+  --scale-minor-third:      1.2;
+  --scale-major-third:      1.25;
+  --scale-perfect-fourth:   1.333;
+  --scale-augmented-fourth: 1.414;
+  --scale-perfect-fifth:    1.5;
+  --scale-golden:           1.618;
+
+  /* ---------- raw values (single source of truth) ---------- */
+  --border-radius: 1rem;
+  --min-font-size: 16;       /* px — root font size at min viewport */
+  --max-font-size: 18;       /* px — type uses this at max viewport */
+  --max-font-size-large: 20; /* px — space uses this at max viewport */
+  --min-viewport: 320;       /* px — start of fluid range */
+  --max-viewport: 1440;      /* px — end of fluid range */
+  --min-scale: var(--scale-major-second);
+  --max-scale: var(--scale-minor-third);
+
+  /* ---------- type scale (consumed by type-scales.css) ---------- */
+  --type-min-font-size: var(--min-font-size);
+  --type-max-font-size: var(--max-font-size);
+  --type-min-viewport:  var(--min-viewport);
+  --type-max-viewport:  var(--max-viewport);
+  --type-min-scale:     var(--min-scale);
+  --type-max-scale:     var(--max-scale);
+
+  /* ---------- space scale (consumed by space.css) ---------- */
+  --space: 1rem;
+  --space-min-font-size: var(--min-font-size);
+  --space-max-font-size: var(--max-font-size-large);
+  --space-min-viewport:  var(--min-viewport);
+  --space-max-viewport:  var(--max-viewport);
+
+  /* t-shirt multipliers (space sizes are these * --space) */
+  --m-3xs: 0.25;
+  --m-2xs: 0.5;
+  --m-xs:  0.75;
+  --m-s:   1;
+  --m-m:   1.5;
+  --m-l:   2;
+  --m-xl:  3;
+  --m-2xl: 4;
+  --m-3xl: 5;
+
+  /* ---------- color palette (consumed by colors.css) ---------- */
+  --neutral-hue: 220;
+  --neutral-chroma: 0.01;
+  --dark-chroma-mul: 0.8;
+
+  /* four hue seeds; 12 color slots cycle through them (slot N uses seed N mod 4).
+     each seed has: chroma, hue, base light-mode lightness, dark-mode lightness delta. */
+  --seed-0-c: 0.28; --seed-0-h: 220; --seed-0-l: 45%; --seed-0-ld: 10%;
+  --seed-1-c: 0.26; --seed-1-h: 195; --seed-1-l: 50%; --seed-1-ld:  0%;
+  --seed-2-c: 0.27; --seed-2-h: 245; --seed-2-l: 52%; --seed-2-ld: -4%;
+  --seed-3-c: 0.25; --seed-3-h:  30; --seed-3-l: 50%; --seed-3-ld:  0%;
+
+  /* lightness bump applied per tier of 4 slots (slots 0-3, 4-7, 8-11) */
+  --tier-0: 0%;
+  --tier-1: 5%;
+  --tier-2: 5%;
+
+  /* neutral lightness scale (light mode uses 1→10, dark mode uses 10→1) */
+  --n-1:  1%;  --n-2: 20%; --n-3: 30%; --n-4: 40%; --n-5:  50%;
+  --n-6: 60%;  --n-7: 70%; --n-8: 85%; --n-9: 95%; --n-10: 99%;
+
+  /* ---------- grid layout (consumed by grids.css) ---------- */
+  --content-max-width: 80rem;
+  --content-wide-1-width: 2rem;
+  --content-wide-2-width: 4rem;
+}
