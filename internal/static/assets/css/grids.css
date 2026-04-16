@@ -1,0 +1,32 @@
+.grid {
+  --content-max-width: 80.0rem;
+  --content-wide-2-width: 4.0rem;
+  --content-wide-1-width: 2.0rem;
+  --grid-gap: clamp(1rem, 6vw, 3rem);
+  --standard: min(var(--content-max-width), 100% - var(--grid-gap) * 2);
+  --wide-1: minmax(0, var(--content-wide-1-width));
+  --wide-2: minmax(0, var(--content-wide-2-width));
+  --full: minmax(var(--grid-gap), 1fr);
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [wide-2-start] var(--wide-2)
+    [wide-1-start] var(--wide-1)
+    [standard-start] var(--standard) [standard-end]
+    var(--wide-1) [wide-1-end]
+    var(--wide-2) [wide-2-end]
+    var(--full) [full-end];
+}
+.grid > * { grid-column: standard; }
+.grid .wide-1 { grid-column: wide-1; }
+.grid .wide-2 { grid-column: wide-2; }
+.grid .full { grid-column: full; }
+.hol-wrapping-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--content-max-width) / 3 - 5rem), 1fr));
+  gap: var(--space-m); justify-content: center; justify-items: center; align-items: start; padding: 0; width: 100%;
+}
+.hol-column {
+  display: grid; grid-template-columns: minmax(auto, 1fr); justify-items: center; width: 100%; padding: 0; gap: var(--space-s);
+}
+.spaced > * + * { margin-block-start: var(--row-space, 1em); }

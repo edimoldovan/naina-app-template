@@ -1,0 +1,160 @@
+:root {
+
+
+  --font-family-1: 'Rubik';
+
+
+  --font-size--2: clamp(0.79rem, calc(0.76rem + 0.13vw), 0.88rem);
+  --font-size--1: clamp(0.89rem, calc(0.84rem + 0.24vw), 1.05rem);
+  --font-size-0: clamp(1.00rem, calc(0.92rem + 0.38vw), 1.27rem);
+  --font-size-1: clamp(1.12rem, calc(1.01rem + 0.56vw), 1.52rem);
+  --font-size-2: clamp(1.27rem, calc(1.11rem + 0.80vw), 1.82rem);
+  --font-size-3: clamp(1.42rem, calc(1.21rem + 1.09vw), 2.19rem);
+  --font-size-4: clamp(1.60rem, calc(1.31rem + 1.46vw), 2.62rem);
+  --font-size-5: clamp(1.80rem, calc(1.42rem + 1.92vw), 3.15rem);
+  --font-size-6: clamp(2.03rem, calc(1.53rem + 2.50vw), 3.78rem);
+  --font-size-7: clamp(2.28rem, calc(1.64rem + 3.22vw), 4.53rem);
+  --font-size-8: clamp(2.57rem, calc(1.74rem + 4.11vw), 5.44rem);
+  --font-size-9: clamp(2.89rem, calc(1.85rem + 5.21vw), 6.53rem);
+  --font-size-10: clamp(3.25rem, calc(1.94rem + 6.56vw), 7.84rem);
+}
+
+
+
+
+@font-face {
+  font-family: 'Madimi One';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/madimione/v1/2V0YKIEADpA8U6RygDnZZFEoBoHMd2U.woff2") format("woff2");
+}
+
+
+
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 300;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 300;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8sDE0U1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 500;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-NYi1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 500;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tvE0U1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 600;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-2Y-1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 600;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8uDFEU1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 700;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 700;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8u6FEU1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 800;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-h4-1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 800;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8vdFEU1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 900;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-ro-1VU80V4bVkA.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 900;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8v0FEU1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  font-stretch: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWbBXyIfDnIV7nEt3KSJbVDV49rz8tdE0U1dYPFkJ1O.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-stretch: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/rubik/v28/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4i1VU80V4bVkA.woff2") format("woff2");
+}
