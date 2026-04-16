@@ -49,9 +49,30 @@ Go web app template. Follow KISS — small, direct code, no speculative abstract
 
 ## Typography
 
-- All font sizes use variables from `type.css`: `--font-size--2` through `--font-size-6`.
-- All font families use `--font-family-1` (Manrope) for body/UI. Display headings may use a separate `--font-family-display` if defined.
-- Never hardcode font sizes in px or rem directly.
+Font size, font weight, font family, and font color are all set by `elements.css` and `type.css` on semantic HTML elements (`h1`–`h6`, `p`, `a`, `span`, `label`, etc). Component CSS must not redeclare these properties unless overriding them for a specific, justified reason.
+
+**Rules:**
+- Never set `font-size` in a component style. The element's base size comes from `elements.css`.
+- Never set `font-weight` in a component style unless you are intentionally deviating from the element's default weight (e.g. making a `p` bold inside a card).
+- Never set `font-family` in a component style unless using `--font-family-display` for a display heading that differs from the body font. Never hardcode a font name.
+- Never set `color` on text in a component style to establish a default. Only set `color` when overriding — e.g. muting a paragraph to `--color-neutral-5`, or applying an accent color to a label.
+- Never use raw values for any of the above. Font sizes must use `--font-size-*` variables if an override is needed. Colors must use `--color-neutral-*` or `--color-color-*` variables.
+
+**What "override" means:** if `elements.css` already sets the right value on that element in that context, do not repeat it. Only write a rule when you need a different value from the default.
+
+## CSS structure
+
+- Split CSS into one `<style>` block per component, labelled with a comment.
+- Link `reset.css`, `colors.css`, `type.css`, `space.css`, `grids.css`, `elements.css`, and `components.css` via `<link>` tags in production templates. Only embed them as `<style>` blocks when delivering a standalone HTML file.
+- Component `<style>` blocks follow after the base stylesheet links.
+- Use CSS nesting (`&`) and child combinators (`>`) inside component blocks. Flat selector lists are not permitted inside a component block — nest instead.
+- Prefer semantic HTML elements (`article`, `header`, `nav`, `ul`, `li`, etc.) over generic `div` wrappers so that nesting selectors follow the document structure.
+
+## Component naming
+
+- Assign a single class to the component root (e.g. `.site-nav`, `.listings-section`). Style everything inside it through nested `>` child selectors targeting semantic elements or minimal modifier classes (e.g. `.active`, `.hidden`, `.bg--1`).
+- Do not use BEM double-underscore classes (`__`) when nesting eliminates the need for them. Only add a class to an element when a structural selector would be ambiguous or fragile.
+- No utility classes beyond those defined in `grids.css` (`.full`, `.wide-1`, `.wide-2`, `.hol-wrapping-row`, `.hol-column`, `.spaced`).
 
 ## Spacing
 
@@ -70,18 +91,6 @@ Go web app template. Follow KISS — small, direct code, no speculative abstract
 - `style="..."` attributes are never allowed in HTML.
 - The only exception is JavaScript setting properties dynamically at runtime (e.g. `transform` for animations, `outline` for programmatic highlights).
 
-## CSS structure
-
-- Split CSS into one `<style>` block per component, labelled with a comment.
-- Embed `reset.css`, `colors.css`, `type.css`, `space.css`, `grids.css`, `elements.css`, and `components.css` as separate `<style>` blocks at the top of the file when delivering a standalone HTML file.
-- Component `<style>` blocks follow after the base blocks.
-
-## Component naming
-
-- Use BEM-style class names: `.component-name__element`.
-- No utility classes beyond those defined in `grids.css` (`.full`, `.wide-1`, `.wide-2`, `.hol-wrapping-row`, `.hol-column`, `.spaced`).
-
-## Forms and inputs
 
 - `select`, `input`, and `textarea` base styles come from `elements.css`. Do not override them unless strictly necessary.
 - Use `--border-radius` for all border radii.
@@ -91,5 +100,3 @@ Go web app template. Follow KISS — small, direct code, no speculative abstract
 - Which sections need full bleed (`.full`) vs standard column?
 - Are there any colors in the design that do not map to the existing palette? If so, flag — never invent new variables.
 - Are there any button variants needed beyond `.primary`, `.secondary`, `.tertiary`, `.delete`? If so, flag — never create them silently.
-
-
