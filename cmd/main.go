@@ -11,9 +11,12 @@ import (
 	"os"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	_ = godotenv.Load()
+
 	database.Init()
 	database.Migrate()
 	session.Init()
@@ -23,10 +26,13 @@ func main() {
 	router.Setup(r)
 	static.Setup(r)
 
-	port := ":" + os.Getenv("NEXAMPLE_PORT")
+	port := os.Getenv("NEXAMPLE_PORT")
+	if port == "" {
+		port = "8080"
+	}
 
-	log.Printf("listening on %s", port)
-	if err := http.ListenAndServe(port, r); err != nil {
+	log.Printf("listening on :%s", port)
+	if err := http.ListenAndServe(":"+port, r); err != nil {
 		log.Fatal(err)
 	}
 }
