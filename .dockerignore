@@ -1,0 +1,10 @@
+.git
+.idea
+.fleet
+tmp
+*.test
+*.exe
+.env
+.kamal
+assets/node_modules
+assets/css-toolchain/node_modules

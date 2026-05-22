@@ -1,0 +1,43 @@
+services:
+  db:
+    image: mariadb:12
+    environment:
+      MARIADB_ROOT_PASSWORD: dev
+      MARIADB_DATABASE: nexample
+      MARIADB_USER: nexample
+      MARIADB_PASSWORD: dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      NEXAMPLE_ENV: development
+      NEXAMPLE_MYSQL_HOST: db
+      NEXAMPLE_MYSQL_USER: nexample
+      NEXAMPLE_MYSQL_PASSWORD: dev
+      NEXAMPLE_MYSQL_DB: nexample
+      NEXAMPLE_PORT: "8080"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - go_cache:/root/.cache/go-build
+      - go_mod:/go/pkg/mod
+
+volumes:
+  db_data:
+  go_cache:
+  go_mod:

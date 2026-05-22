@@ -1,0 +1,12 @@
+FROM golang:1.26
+
+WORKDIR /app
+
+RUN go install github.com/cespare/reflex@latest
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+EXPOSE 8080
+
+CMD ["reflex", "-r", "\\.(go|html|css|js)$", "-s", "--", "go", "run", "./cmd/main.go"]
