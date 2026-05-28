@@ -45,8 +45,6 @@ func render(w http.ResponseWriter, name string, data map[string]any) {
 	}
 	data["IsDev"] = config.IsDev()
 
-	pageFile := name + ".html"
-
 	if config.IsDev() {
 		partials, err := filepath.Glob(filepath.Join("internal", "handler", "html", "partials", "*.html"))
 		if err != nil {
@@ -54,13 +52,13 @@ func render(w http.ResponseWriter, name string, data map[string]any) {
 			return
 		}
 		files := append([]string{}, partials...)
-		files = append(files, filepath.Join("internal", "handler", "html", "pages", pageFile))
+		files = append(files, filepath.Join("internal", "handler", "html", "pages", name+".html"))
 		t, err := template.ParseFiles(files...)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		if err := t.ExecuteTemplate(w, pageFile, data); err != nil {
+		if err := t.ExecuteTemplate(w, name, data); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
 		return
@@ -72,7 +70,7 @@ func render(w http.ResponseWriter, name string, data map[string]any) {
 		return
 	}
 
-	if err := t.ExecuteTemplate(w, pageFile, data); err != nil {
+	if err := t.ExecuteTemplate(w, name, data); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }

@@ -12,14 +12,14 @@ Go web app template. Follow KISS — small, direct code, no speculative abstract
   - `partials/` — reusable `{{define "name"}}` fragments (head, nav, …).
 
 ## Rendering
-- No layouts folder. Each page file is its own complete `<!DOCTYPE html>` document.
+- Each page file wraps its `<!DOCTYPE html>` document in a `{{define "<name>"}}...{{end}}` block where `<name>` matches the filename without `.html`.
 - Pages pull in partials via `{{template "name" .}}`.
 - `InitTemplates()` parses every partial together with each page once at startup.
 - In dev mode (`config.IsDev()`), templates are re-parsed from disk on every request for hot reload.
-- Handlers call `render(w, "pagename", data)` — the key is the page filename without `.html`.
+- Handlers call `render(w, "pagename", data)` — `pagename` is the define name (also the filename without `.html`).
 
 ## Adding a page
-1. Create `internal/handler/html/pages/foo.html` as a full HTML document.
+1. Create `internal/handler/html/pages/foo.html` wrapping its `<!DOCTYPE html>` document in `{{define "foo"}}...{{end}}`.
 2. Add a handler in `internal/handler/` that calls `render(w, "foo", data)`.
 3. Register the route in `internal/router/`.
 
