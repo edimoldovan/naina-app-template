@@ -16,6 +16,7 @@ import (
 
 func main() {
 	_ = godotenv.Load()
+	config.Init()
 
 	database.Init()
 	database.Migrate()
