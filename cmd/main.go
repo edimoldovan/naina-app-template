@@ -26,9 +26,9 @@ func main() {
 	router.Setup(r)
 	static.Setup(r)
 
-	port := os.Getenv("NEXAMPLE_PORT")
-	if port == "" {
-		port = "8080"
+	port := ":8080"
+	if !config.IsDev() {
+		port = ":80"
 	}
 
 	log.Printf("listening on :%s", port)
