@@ -3,12 +3,12 @@ package main
 import (
 	"log"
 	"net/http"
+	"nexample/internal/config"
 	"nexample/internal/database"
 	"nexample/internal/handler"
 	"nexample/internal/router"
 	"nexample/internal/session"
 	"nexample/internal/static"
-	"os"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/joho/godotenv"
